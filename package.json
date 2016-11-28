@@ -2,9 +2,9 @@
   "name": "visualforce-remote-actions",
   "version": "1.0.1",
   "description": "Easily invoke methods in your apex controllers annotated with @RemoteAction from scripts in Visualforce pages or lightning components.",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "build": "babel src -d ./",
+    "build": "babel src --presets babel-preset-es2015 --out-dir dist",
     "prepublish": "npm run build",
     "test": "npm test"
   },
@@ -27,5 +27,9 @@
   "homepage": "https://github.com/matt-ian-thomas/visualforce-remote-actions#readme",
   "dependencies": {
     "bluebird": "3.4.6"
+  },
+  "devDependencies": {
+    "babel-cli": "6.18.0",
+    "babel-preset-es2015": "6.18.0"
   }
 }

@@ -1,2 +1,2 @@
-import {RemoteAction} from './remote-action';
+import { RemoteAction } from './remote-action';
 export default RemoteAction;
