@@ -20,7 +20,7 @@ ex: You have a controller named `AccountDetailsController.cls` with a remote act
 //function
 new RemoteAction(AccountDetailsController.save, arg1, arg2)
 ```
-**OR*
+**OR**
 ```javascript
 //string
 new RemoteAction('AccountDetailsController.save', arg1, arg2)
