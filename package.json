@@ -1,0 +1,29 @@
+{
+  "name": "visualforce-remote-actions",
+  "version": "1.0.0",
+  "description": "Easily invoke methods in your apex controllers annotated with @RemoteAction from scripts in Visualforce pages or lightning components.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matt-ian-thomas/visualforce-remote-actions.git"
+  },
+  "keywords": [
+    "promise",
+    "bluebird",
+    "visualforce",
+    "lightning",
+    "remote-action"
+  ],
+  "author": "Matt Ian Thomas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matt-ian-thomas/visualforce-remote-actions/issues"
+  },
+  "homepage": "https://github.com/matt-ian-thomas/visualforce-remote-actions#readme",
+  "dependencies": {
+    "bluebird": "3.4.6"
+  }
+}
