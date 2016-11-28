@@ -12,26 +12,67 @@ The `RemoteAction` class has the following constructor:
 constructor(method, ...args) {}
 ```
 
+`method` is either a function or string representation of a @RemoteAction annotated method from your apex controller.
+`args` is an array of all subsequent arguments to be used in the invocation of the remote action.
+
+ex: You have a controller named `AccountDetailsController.cls` with a remote action named `save`, which accepts two arguments.
+```javascript
+//function
+new RemoteAction(AccountDetailsController.save, arg1, arg2)
+```
+**OR*
+```javascript
+//string
+new RemoteAction('AccountDetailsController.save', arg1, arg2)
+```
+
+RemoteAction has a single function called `invoke` with an optional argument called `options`. `invoke` returns a `Promise`:
+
+```javascript
+//options is an object literal
+invoke(options = {}) {}
+```
+
+The options supported in visualforce remoting can be found detailed here: https://developer.salesforce.com/docs/atlas.en-us.pages.meta/pages/pages_js_remoting_configuring_request.htm
+
+ex: You want to invoke the remote action from the above example.
+```javascript
+new RemoteAction(AccountDetailsController.save, arg1, arg2)
+	.invoke({escape: false})
+```
+
+To handle the result, add a `then`, `catch`, and `finally` chain as you would normally handle a Promise:
+
+```javascript
+new RemoteAction(AccountDetailsController.save, arg1, arg2)
+	.invoke({escape: false})
+	.then(result => {
+		//do something with the result!
+	})
+	.catch(err => {
+		//do something with this error!
+	})
+	.finally(() => {
+		//do something after everything is all said and done.
+	});
+```
+
 ## Motivation
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+I created visualforce-remote-actions to make it easier to work with client-server interactions in the context of visualforce development. Its intention is to provide a simpler API with built-in handling via bluebird's promises, with the goal of making the code both easier to read and write.
 
 ## Installation
 
-Provide code examples and explanations of how to get the project.
-
-## API Reference
-
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
+`npm install visualforce-remote-actions`
 
 ## Tests
 
-Describe and show how to run the tests with code examples.
+Coming soon...
 
 ## Contributors
 
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
+If you find an issue, please let me know on this repository.
 
 ## License
 
-A short snippet describing the license (MIT, Apache, etc.)
+ISC
