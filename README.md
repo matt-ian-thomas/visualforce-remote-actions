@@ -6,6 +6,10 @@ Easily invoke methods in your apex controllers annotated with @RemoteAction from
 
 ## Code Example
 
+```javascript
+import RemoteAction from 'visualforce-remote-actions';
+```
+
 The `RemoteAction` class has the following constructor:
 
 ```javascript
